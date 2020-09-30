@@ -4,7 +4,7 @@
 #
 #  CHANGES:
 #         WHO         REV    DATE        DETAIL
-#         ctstewar    1.2    09/29/2020  Updated sender to tag.holler@gmail.com, created email function
+#         ctstewar    1.3    09/29/2020  Updated sender to tag.holler@gmail.com, created email function
 #         foxyt       1.2    09/15/2020  Created dictionary and keys for searching leftover contents
 #         megeep      1.1    07/01/2019  Improved handling of hunt codes and recipients
 #         megeep      1.0    07/01/2018  Initial creation?
@@ -160,7 +160,7 @@ while True:
             # If the CPW_time has changed, it's a new leftover list. Loop through the pages and check for codes
             if CPW_time != old_CPW_time:
                 page_number = i+1
-                if page_number = = 1:
+                if page_number == 1:
                     print("\n-------------------------------------------------------------------------")
                 print("\nNew leftover list found - reading Page "+str(page_number))
                 print("CPW time is "+CPW_time)
@@ -175,7 +175,9 @@ while True:
                         msg = 'Subject: ' + tagCode + ' is available as of ' + CPW_time + '\n\n' + email_footer
                         subject = tagCode + ' @ ' + CPW_time
                         send_email(emailList, subject, msg)
-                        print("  Email sent for " + subject)
+                        now = datetime.now()
+                        dt_string = now.strftime("%H:%M:%S")
+                        print("  Email sent for " + subject + ' @ ' + dt_string) 
         old_CPW_time = CPW_time
     except:
         print("ERROR: failed to complete")
