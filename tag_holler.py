@@ -4,6 +4,7 @@
 #
 #  CHANGES:
 #         WHO         REV    DATE        DETAIL
+#         ctstewar    1.4    10/28/2020  Added texting
 #         ctstewar    1.3    09/29/2020  Updated sender to tag.holler@gmail.com, created email function
 #         foxyt       1.2    09/15/2020  Created dictionary and keys for searching leftover contents
 #         megeep      1.1    07/01/2019  Improved handling of hunt codes and recipients
@@ -80,6 +81,7 @@ def send_email(recipient, subject_line, email_body):
         mail.starttls()
         mail.login(SMTP_USERNAME, SMTP_PASSWORD)
         mail.sendmail(EMAIL_FROM, EMAIL_TO, msg.as_string())
+        # Send text message through SMS gateway of destination number
         mail.quit()
     except:
         print('ERROR: Unspecified email delivery failure.')
@@ -114,7 +116,7 @@ while True:
         goatBois = thirstyBois + ['mlanderson4645@gmail.com', 'cswatk2@gmail.com', 'tyler.fox09@gmail.com']
         elkBois = thirstyBois + ['rileygelatt@gmail.com']
         deerBois = thirstyBois + ['william.dockins@nblenergy.com']
-
+        testBois = ['megeep@gmail.com', 'shco6527@gmail.com', 'a.lodolce@gmail.com', 'colinstewrat@gmail.com','7209365042@vtext.com', '3034374578@messaging.sprintpcs.com']
         # Makes a dictionary object. The tag code is the key, while the email list is the value. Use the key to retrieve the value
         tagDict= {}
         tagDict["AF119O1R"] = goatBois
@@ -144,8 +146,95 @@ while True:
         tagDict["DF020O4R"] = elkBois
         tagDict["EF020L3R"] = ['megeep@gmail.com', 'colinstewrat@gmail.com', 'dcmaes@gmail.com']
         # Test tag: 
-        tagDict["EF131O2R"] = ['megeep@gmail.com', 'colinstewrat@gmail.com']
-        tagDict["EF131O3R"] = ['megeep@gmail.com', 'colinstewrat@gmail.com']
+        # tagDict["EF131O2R"] = 
+        tagDict["DE131P3R"] = testBois
+        tagDict["DM131O3R"] = testBois
+        tagDict["DF029O2R"] = testBois
+        tagDict["DF029O3R"] = testBois
+        tagDict["DF029O4R"] = testBois
+        tagDict["EF029O1R"] = testBois
+        tagDict["EF029O2R"] = testBois
+        tagDict["EF029O3R"] = testBois
+        tagDict["EF029O4R"] = testBois
+        tagDict["EM029O1R"] = testBois
+        tagDict["EM029O2R"] = testBois
+        tagDict["EM029O3R"] = testBois
+        tagDict["EM029O4R"] = testBois
+        tagDict["EF002O2R"] = testBois
+        tagDict["EF201O2R"] = testBois
+        tagDict["EF040O2R"] = testBois
+        tagDict["EF049O2R"] = testBois
+        tagDict["EF500O2R"] = testBois
+        tagDict["EF056O2R"] = testBois
+        tagDict["EF061O2R"] = testBois
+        tagDict["EF067O2R"] = testBois
+        tagDict["EF001O3R"] = testBois
+        tagDict["EF002O3R"] = testBois
+        tagDict["EF010O3R"] = testBois
+        tagDict["EF040O3R"] = testBois
+        tagDict["EF048O3R"] = testBois
+        tagDict["EF049O3R"] = testBois
+        tagDict["EF500O3R"] = testBois
+        tagDict["EF561O3R"] = testBois
+        tagDict["EF061O3R"] = testBois
+        tagDict["EF001O4R"] = testBois
+        tagDict["EF002O4R"] = testBois
+        tagDict["EF201O4R"] = testBois
+        tagDict["EF010O4R"] = testBois
+        tagDict["EF048O4R"] = testBois
+        tagDict["EF057O4R"] = testBois
+        tagDict["EF058O4R"] = testBois
+        tagDict["EF061O4R"] = testBois
+        tagDict["EM039O2R"] = testBois
+        tagDict["EM046O2R"] = testBois
+        tagDict["EM048O2R"] = testBois
+        tagDict["EM481O2R"] = testBois
+        tagDict["EM049O2R"] = testBois
+        tagDict["EM500O2R"] = testBois
+        tagDict["EM056O2R"] = testBois
+        tagDict["EM057O2R"] = testBois
+        tagDict["EM058O2R"] = testBois
+        tagDict["EM061O2R"] = testBois
+        tagDict["EM066O2R"] = testBois
+        tagDict["EM076O2R"] = testBois
+        tagDict["EM039O3R"] = testBois
+        tagDict["EM048O3R"] = testBois
+        tagDict["EM481O3R"] = testBois
+        tagDict["EM049O3R"] = testBois
+        tagDict["EM050O3R"] = testBois
+        tagDict["EM500O3R"] = testBois
+        tagDict["EM501O3R"] = testBois
+        tagDict["EM051O3R"] = testBois
+        tagDict["EM057O3R"] = testBois
+        tagDict["EM058O3R"] = testBois
+        tagDict["EM061O3R"] = testBois
+        tagDict["EM066O3R"] = testBois
+        tagDict["EM076O3R"] = testBois
+        tagDict["EM039O4R"] = testBois
+        tagDict["EM049O4R"] = testBois
+        tagDict["EM050O4R"] = testBois
+        tagDict["EM500O4R"] = testBois
+        tagDict["EM058O4R"] = testBois
+        tagDict["EM061O4R"] = testBois
+        tagDict["EM501O4R"] = testBois
+        tagDict["EE040O2R"] = testBois
+        tagDict["EE040O3R"] = testBois
+        tagDict["EE040O4R"] = testBois
+        tagDict["EF002L1R"] = testBois
+        tagDict["EF011L1R"] = testBois
+        tagDict["EF002O4R"] = testBois
+        tagDict["EF001L1R"] = testBois
+        tagDict["EF025O4R"] = testBois
+        tagDict["EF005O3R"] = testBois
+        tagDict["EF001O3R"] = testBois
+        tagDict["EF010O3R"] = testBois
+        tagDict["EF002O3R"] = testBois
+        tagDict["EF010O4R"] = testBois
+        tagDict["EF022L1R"] = testBois
+        tagDict["EF010L1R"] = testBois
+        tagDict["EF026L1R"] = testBois
+        tagDict["EF040O3R"] = testBois
+        tagDict["EF022O4R"] = testBois
 
         # For each page extract text and do the search for tag codes
         for i in range(0, NumPages):
