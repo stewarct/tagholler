@@ -119,9 +119,9 @@ while True:
         # elkBois = thirstyBois + ['rileygelatt@gmail.com']
         # deerBois = ['megeep@gmail.com', 'shco6527@gmail.com', 'a.lodolce@gmail.com', 'colinstewrat@gmail.com',
         #                     '7209365042@vtext.com', '3034374578@messaging.sprintpcs.com']
-        testBois = ['megeep@gmail.com', 'colinstewrat@gmail.com', 'rileygelatt@gmail.com',
-                    'a.lodolce@gmail.com', '7209365042@vtext.com', '3034374578@messaging.sprintpcs.com',
-                    '9707788390@messaging.sprintpcs.com']
+        testBois = ['megeep@gmail.com', 'rileygelatt@gmail.com', 'colinstewrat@gmail.com',  '7209365042@vtext.com',
+                    'a.lodolce@gmail.com', '3034374578@messaging.sprintpcs.com',
+                    '9707788390@messaging.sprintpcs.com', '6304405232@tmomail.net']
         # Makes a dictionary object. The tag code is the key, while the email list is the value. Use the key to retrieve the value
         tagDict = {"DF012O3R", "DF015O3R", "DF025O3R", "DF035O3R", "DF044O3R", "DF049O3R", "DF444O3R", "DF501O3R",
                    "DF511O3R", "DM006O3R", "DM012O3R", "DM015O3R", "DM025O3R", "DM031O3R", "DM035O3R", "DM043O3R",
