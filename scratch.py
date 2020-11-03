@@ -99,7 +99,7 @@ Text = 'Run Date and Time: and then 00:00:01'
 CPW_website = 'cpwshop.com'
 email_footer = CPW_website + '\n\n' + 'Thank you for using the Tag Holler system. For issues or concerns contact the tag holler team by responding to this message.'
 while True:
-    # try:
+    #try:
     # Pull PDF from CPW website and parse using PyPDF2
     file_url = "https://cpw.state.co.us/Documents/Leftover.pdf"
     r = requests.get(file_url, stream=True)
@@ -128,6 +128,13 @@ while True:
                "DM082O3R", "DM085O3R", "DM140O3R", "DM161O3R", "DM171O3R", "DM444O3R", "DM551O3R", "DE131P3R",
                "DM131O3R", "EF012O3R", "EF014O3R", "EF016O3R", "EF032O3R", "EF042O3R", "EF161O3R", "EF231O3R",
                "EF471O3R", "EF500O3R"}
+
+    #TestTag , "EF131P3R"
+    # EF131P3R = {"List": "TEST TAG", "Drawn At": "Leftover", "%Draw": "", "Success": "", "3 yr Avg%": "", "OTC ELK": "Y",
+    #             "%Public": "0.11", "ANY BULL": "N", "Driving (hr)": "3.1", "#Tags": "6", "Public Per Tag": "",
+    #             "Leftover Day": "0", "3 year leftover day avg": "0", "Valid Units": "", "Sq Mi Public": "",
+    #             "Bull to Cow": "23", }
+
     DF012O3R = {"List": "A", "Drawn At": "2", "%Draw": "0.14", "Success": "1", "3 yr Avg%": "0.69", "OTC ELK": "Y",
                 "%Public": "0.55", "ANY BULL": "N", "Driving (hr)": "3.5", "#Tags": "10", "Public Per Tag": "",
                 "Leftover Day": "0", "3 year leftover day avg": "0.333333333333333", "Valid Units": "",
@@ -324,9 +331,11 @@ while True:
                 if re.search(tagCode, Text):
                     # Send email
                     msg = 'List:'+ locals()[tagCode].get('List') + '\n' \
-                    +  'Drawn At:'+ locals()[tagCode].get('Drawn At') + '\n' +  '3 yr %:'+ locals()[tagCode].get('3 yr Avg') +\
-                    '\n' +  'OTC Elk:'+ locals()[tagCode].get('OTC ELK') + '\n' +  '%Public:'+\
-                    locals()[tagCode].get('%Public') + '\n' +  'Any Bull:'+ locals()[tagCode].get('ANY BULL') +  '\n\n' + email_footer
+                    +  'Drawn At:'+ locals()[tagCode].get('Drawn At') + '\n'\
+                    +  '3 yr %:'+ locals()[tagCode].get('3 yr Avg%') + '\n'\
+                    +  'OTC Elk:'+ locals()[tagCode].get('OTC ELK') + '\n'\
+                    +  '%Public:' + locals()[tagCode].get('%Public') + '\n'\
+                    +  'Any Bull:'+ locals()[tagCode].get('ANY BULL') +  '\n\n' + email_footer
                     subject = tagCode + ' @ ' + CPW_time
                     send_email(testBois, subject, msg)
                     now = datetime.now()
